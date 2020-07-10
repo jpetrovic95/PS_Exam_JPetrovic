@@ -1,0 +1,15 @@
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\bin\Debug\DependencyPropertyExample.exe.config
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\bin\Debug\DependencyPropertyExample.exe
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\bin\Debug\DependencyPropertyExample.pdb
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.csprojAssemblyReference.cache
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\MainWindow.g.cs
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\App.g.cs
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample_MarkupCompile.cache
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample_MarkupCompile.lref
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\MainWindow.baml
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.g.resources
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.Properties.Resources.resources
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.csproj.GenerateResource.cache
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.csproj.CoreCompileInputs.cache
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.exe
+D:\PS_Exam_JPetrovic\DependencyPropertyExample\obj\Debug\DependencyPropertyExample.pdb

@@ -1,0 +1,15 @@
+D:\PS_Exam_JPetrovic\StudentInfoSystem\bin\Debug\StudentInfoSystem.exe.config
+D:\PS_Exam_JPetrovic\StudentInfoSystem\bin\Debug\StudentInfoSystem.exe
+D:\PS_Exam_JPetrovic\StudentInfoSystem\bin\Debug\StudentInfoSystem.pdb
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.csprojAssemblyReference.cache
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\MainWindow.g.cs
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\App.g.cs
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem_MarkupCompile.cache
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem_MarkupCompile.lref
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\MainWindow.baml
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.g.resources
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.Properties.Resources.resources
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.csproj.GenerateResource.cache
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.csproj.CoreCompileInputs.cache
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.exe
+D:\PS_Exam_JPetrovic\StudentInfoSystem\obj\Debug\StudentInfoSystem.pdb
