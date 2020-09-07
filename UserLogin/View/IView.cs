@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UserLogin.Model;
+﻿using UserLogin.Model;
 
 namespace UserLogin.View
 {
     public interface IView
     {
         void ShowMenu();
+		void PrintMessage(string msg);
+		void PrintError(string errorMsg);
         void PrintAllUsers(IUserData userData);
     }
 }

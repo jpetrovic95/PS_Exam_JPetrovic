@@ -51,7 +51,5 @@ namespace DependencyPropertyExample
         // Using a DependencyProperty as the backing store for Counter.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CounterProperty =
             DependencyProperty.Register("Counter", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
-
-
     }
 }

@@ -16,7 +16,6 @@ namespace UserLogin
         {
             string activityLine = DateTime.Now + ";"
                 + LoginValidation.currentUserUsername + ";"
-                + LoginValidation.currentUserRole + ";"
                 + activity;
 
             CurrentSessionActivities.Add(activityLine);

@@ -1,7 +1,4 @@
-﻿using System;
-using static System.Console;
-using System.Collections.Generic;
-using UserLogin.Controller;
+﻿using UserLogin.Controller;
 
 namespace UserLogin
 {

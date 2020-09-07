@@ -28,23 +28,21 @@ namespace UserLogin.Controller
 
         private void HandleLogin()
         {
-            
-
-            Console.WriteLine("Username: ");
+            _currentView.PrintMessage("Username: ");
             string username = Console.ReadLine();
 
-            Console.WriteLine("Password: ");
+            _currentView.PrintMessage("Password: ");
             string password = Console.ReadLine();
 
-            LoginValidation loginValidation = new LoginValidation(username, password, Console.WriteLine);
+            LoginValidation loginValidation = new LoginValidation(username, password, _currentView.PrintError);
             if (!loginValidation.ValidateUserInput(ref _currentUser, _userData))
             {
-                Console.WriteLine("\nLogin failed!");
+                _currentView.PrintError("\nLogin failed!");
                 Console.ReadLine();
                 return;
             }
 
-            string userRoleMessage = "\n{0} -> {1} has logged in.\n";
+            string userRoleMessage = "\n{0}: User {1} has logged in.\n";
             switch (_currentUser.UserRole)
             {
                 case UserRoles.ADMIN:
@@ -69,13 +67,13 @@ namespace UserLogin.Controller
                     }                
                 default:
                     {
-                        Console.Write($"Something went wrong. This role is not defined: {_currentUser.UserRole}!\n");
+                        _currentView.PrintError($"Something went wrong. This role is not defined: {_currentUser.UserRole}!\n");
                         break;
                     }
                     
             }
 
-            Console.WriteLine(userRoleMessage);
+            _currentView.PrintMessage(userRoleMessage);
             Console.ReadLine();
         }
 
@@ -93,7 +91,7 @@ namespace UserLogin.Controller
             }
             else
             {
-                Console.WriteLine("You don't have permissions to access admin data!");
+                _currentView.PrintMessage("You don't have permissions to access admin data!");
             }
         }
 
@@ -101,12 +99,11 @@ namespace UserLogin.Controller
         {
 
             string input = Console.ReadLine();
-            
-            Dictionary<string, int> allUsers = _userData.ListAllUsers();
+            Dictionary<string, int> listOfUsers = _userData.ListAllUsers();
 
-            if (allUsers == null)
+            if (listOfUsers == null)
             {
-                Console.Write("No user data found!\n");
+                _currentView.PrintMessage("No user data found!\n");
                 return;
             }
 
@@ -122,80 +119,83 @@ namespace UserLogin.Controller
                         }
                     case 1:
                         {
-                            Console.WriteLine("Enter username of the user you want to edit: ");
+                            _currentView.PrintMessage("Enter username of the user you want to edit: ");
                             string userToEdit = Console.ReadLine();
 
-                            if (!allUsers.ContainsKey(userToEdit))
+                            if (!listOfUsers.ContainsKey(userToEdit))
                             {
-                                Console.Write($"User not found: {userToEdit}!");
+                                _currentView.PrintMessage($"User not found: {userToEdit}!");
                                 break;
                             }
 
-                            Console.WriteLine("Enter new role: ");
+                            _currentView.PrintMessage("Enter new role: ");
                             string newRoleInput = Console.ReadLine();
-                            if (!Enum.TryParse(newRoleInput, true, out UserRoles newRole))
+                            if (!Enum.TryParse(newRoleInput, true, out UserRoles newUserRole))
                             {
-                                Console.Write($"Invalid role: {newRoleInput}!\n");
+                                _currentView.PrintError($"Invalid role: {newRoleInput}!\n");
                                 break;
                             }
-
-                            _userData.AssignUserRole(allUsers[userToEdit], newRole);
+                            else
+                            {
+                                _currentView.PrintMessage("Role was succesfully updated.");
+                            }
+                            _userData.AssignUserRole(listOfUsers[userToEdit], newUserRole);
                         }
                         break;
                     case 2:
                         {
-                            Console.WriteLine("Enter the username you want to edit: ");
+                            _currentView.PrintMessage("Enter the username you want to edit: ");
                             string userToEdit = Console.ReadLine();
-                            if (!allUsers.ContainsKey(userToEdit))
+                            if (!listOfUsers.ContainsKey(userToEdit))
                             {
-                                Console.Write($"User not found: {userToEdit}!\n");
+                                _currentView.PrintMessage($"There is no such user!\n");
                                 break;
                             }
 
-                            Console.WriteLine("Enter new date: ");
-                            string newUserActiveToDateInput = Console.ReadLine();
-                            if (!DateTime.TryParse(newUserActiveToDateInput, out DateTime newUserActiveToDate) || newUserActiveToDate < DateTime.Now)
+                            _currentView.PrintMessage("Enter new date: ");
+                            string newDate = Console.ReadLine();
+                            if (!DateTime.TryParse(newDate, out DateTime newUserDate) || newUserDate < DateTime.Now)
                             {
-                                Console.Write($"Invalid date: {newUserActiveToDateInput}!\n");
+                                _currentView.PrintError($"Invalid date!\n");
                                 break;
                             }
 
-                            _userData.SetUserActiveTo(allUsers[userToEdit], newUserActiveToDate);
+                            _userData.SetUserActiveTo(listOfUsers[userToEdit], newUserDate);
                         }
                         break;
                     case 3:
                         {
                             foreach (IUser u in _userData.GetUsersData())
                             {
-                                Console.WriteLine(u);
+                                _currentView.PrintMessage(u.ToString());
                             }
                         }
                         break;
                     case 4:
                         {
-                            Console.Write("Enter a log filter: ");
+                            _currentView.PrintMessage("Enter a key word to search for: ");
                             string keyWord = Console.ReadLine();
 
                             foreach (string logEntry in Logger.GetCurrentSessionActivities(keyWord))
                             {
-                                Console.Write(logEntry);
+                                _currentView.PrintMessage(logEntry);
                             }
                         }
                         break;
                     case 5:
                         {
-                            Console.WriteLine(Logger.GetAllUserActivities());
+                            _currentView.PrintMessage(Logger.GetAllUserActivities());
                         }
                         break;
                     default:
                         {
-                            Console.WriteLine("Invalid input: " + input + "!\n");
+                            _currentView.PrintError("Invalid input: " + input + "!\n");
                         }
                         break;
                 }
             }
 
-            Console.Write("\nPress any key to continue...");
+            _currentView.PrintMessage("\nPress any key to continue...");
 
             Console.ReadKey();
             Console.Clear();

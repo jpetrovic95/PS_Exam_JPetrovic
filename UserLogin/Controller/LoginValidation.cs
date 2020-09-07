@@ -11,7 +11,7 @@ namespace UserLogin.Controller
     {
         private readonly string username;
         private readonly string password;
-        private string errMessage;
+        private string errorMessage;
         private readonly ActionOnError actionOnError;
 		public delegate void ActionOnError(string errorMsg);
         public static string currentUserUsername;
@@ -28,29 +28,29 @@ namespace UserLogin.Controller
         {
             if (username.Equals(String.Empty) == true)
             {
-                errMessage = "Please enter the Username. Username cannot be empty.";
-                actionOnError(errMessage);
+                errorMessage = "Please enter the Username. Username cannot be empty.";
+                actionOnError(errorMessage);
                 return false;
             }
 
             if (username.Length < 5)
             {
-                errMessage = "Username cannot be less than 5 characters.";
-                actionOnError(errMessage);
+                errorMessage = "Username cannot be less than 5 characters.";
+                actionOnError(errorMessage);
                 return false;
             }
 
             if (password.Equals(String.Empty) == true)
             {
-                errMessage = "Please enter the password again. Password cannot be empty.";
-                actionOnError(errMessage);
+                errorMessage = "Please enter the password again. Password cannot be empty.";
+                actionOnError(errorMessage);
                 return false;
             }
 
             if (password.Length < 5)
             {
-                errMessage = "The password is less than 5 characters";
-                actionOnError(errMessage);
+                errorMessage = "The password is less than 5 characters";
+                actionOnError(errorMessage);
                 return false;
             }
 
@@ -58,8 +58,8 @@ namespace UserLogin.Controller
 
             if (user == null)
             {
-                errMessage = $"There is no such user found: {username}. Please try again. ";
-                actionOnError(errMessage);
+                errorMessage = $"There is no such user found: {username}. Please try again. ";
+                actionOnError(errorMessage);
                 return false;
             }
 

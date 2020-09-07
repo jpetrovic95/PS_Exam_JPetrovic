@@ -18,9 +18,9 @@ namespace UserLogin.Model
 
         public void ResetTestUserData()
         {
-            IUser user1 = new User("JPetrovic", "pass1", "123214003", UserRoles.ADMIN);
-            IUser user2 = new User("SomeName", "pass2", "123456789", UserRoles.STUDENT);
-            IUser user3 = new User("Administrator", "pass3", "987654321", UserRoles.ADMIN);
+            IUser user1 = new User("JPetrovic", "password1", "123214003", UserRoles.ADMIN);
+            IUser user2 = new User("SomeName", "password2", "123456789", UserRoles.STUDENT);
+            IUser user3 = new User("Administrator", "password3", "987654321", UserRoles.ADMIN);
 
             user1.ActiveTo = DateTime.Now.AddYears(2000);
             user2.ActiveTo = DateTime.Now.AddYears(2000);

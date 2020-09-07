@@ -24,10 +24,8 @@ namespace UserLogin.Model
             FacultyNumber = facNumber;
             UserRole = role;
             Created = DateTime.Now;
-
             ActiveTo = DateTime.Now.AddYears(5);
         }
-
         public override string ToString()
         {
             return $"Username: {Username}\n" +
